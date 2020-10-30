@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
+using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.JsonPatch;
@@ -44,12 +46,12 @@ namespace MyProjectApi.Controllers
             _repository.SaveChanges();
             BrandReadDto brandReadDto = _mapper.Map<BrandReadDto>(createdBrand);
 
-            if (parsedMediaType.MediaType == "application/vnd.my.hateoas+json")
+            if (parsedMediaType.MediaType == "application/hateoas+json")
             {
                 var links = CreateLinksForBrand(brandReadDto.Id);
-                var smth = brandReadDto.ShapeData(null) as System.Collections.Generic.IDictionary<string, object>;
-                smth.Add("links", links);
-                return CreatedAtRoute("GetBrandById", new { brandId = smth["Id"] }, smth);
+                var propsDictionary = brandReadDto.ShapeData(null) as System.Collections.Generic.IDictionary<string, object>;
+                propsDictionary.Add("links", links);
+                return CreatedAtRoute("GetBrandById", new { brandId = propsDictionary["Id"] }, propsDictionary);
             }
             return Ok(brandReadDto);
         }
@@ -68,7 +70,7 @@ namespace MyProjectApi.Controllers
             if (brandsFromDb == null)
                 return NotFound();
 
-            if (parsedMediaType.MediaType == "application/vnd.my.hateoas+json")
+            if (parsedMediaType.MediaType == "application/hateoas+json")
             {
                 var links = CreateLinksForBrands();
 
@@ -86,7 +88,6 @@ namespace MyProjectApi.Controllers
                     list,
                     links
                 };
-
                 return Ok(brandsWithLinksResult);
             }
 
@@ -106,14 +107,14 @@ namespace MyProjectApi.Controllers
             Brand brandFromDb = _repository.GetBrandById(brandId);
             if (brandFromDb != null)
             {
-                if (parsedMediaType.MediaType == "application/vnd.my.hateoas+json")
+                if (parsedMediaType.MediaType == "application/hateoas+json")
                 {
-                    var smth =
+                    var propsDictionary =
                     _mapper.Map<BrandReadDto>(brandFromDb).ShapeData(string.Empty)
                         as IDictionary<string, object>;
                     var link = CreateLinksForBrand(brandId);
-                    smth.Add("links", link);
-                    return Ok(smth);
+                    propsDictionary.Add("links", link);
+                    return Ok(propsDictionary);
                 }
                 return Ok(_mapper.Map<BrandReadDto>(brandFromDb));
             }
