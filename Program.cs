@@ -24,8 +24,6 @@ namespace MyProjectApi
                 try
                 {
                     var database = services.GetRequiredService<AppDbContext>();
-                    database.Database.EnsureDeleted();
-                    database.Database.EnsureCreated();
                     database.AddSomeData();
                 }
                 catch (Exception ex)

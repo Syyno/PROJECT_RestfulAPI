@@ -44,7 +44,6 @@ namespace MyProjectApi
             services.AddDbContext<AppDbContext>(o => o.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<IRepository, EFRepository>();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-            services.AddResponseCaching();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -64,8 +63,6 @@ namespace MyProjectApi
                     });
                 });
             }
-
-            app.UseResponseCaching();
 
             app.UseRouting();
 
