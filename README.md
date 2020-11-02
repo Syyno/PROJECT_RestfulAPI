@@ -28,3 +28,5 @@ This project represents an Restful API written in *ASP.NET Core 3.1*
 - To sort data, use **orderBy**  param equals field name, base on which sorting will be implemented. By default result sorted in ascending order.<br/>
 For descending order, add *"desc"* after field name, seperated by comma.</br>
 Example: **orderBy=price** - ordering by field "price" in ascending order. **orderBy=price,desc** - ordering by field "price" in descending order.
+
+- *XML* format is supported. Use **accept** header with value of **"application/xml"**. 
