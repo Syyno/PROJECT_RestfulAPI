@@ -63,5 +63,10 @@ C:\Users\Андрей\source\repos\MyProjectApi\MyProjectApi\bin\Debug\netcoreap
 C:\Users\Андрей\source\repos\MyProjectApi\MyProjectApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\Андрей\source\repos\MyProjectApi\MyProjectApi\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 C:\Users\Андрей\source\repos\MyProjectApi\MyProjectApi\bin\Debug\netcoreapp3.1\System.Linq.Dynamic.Core.dll
+C:\Users\Андрей\source\repos\MyProjectApi\MyProjectApi\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\Андрей\source\repos\MyProjectApi\MyProjectApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Андрей\source\repos\MyProjectApi\MyProjectApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Андрей\source\repos\MyProjectApi\MyProjectApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\Андрей\source\repos\MyProjectApi\MyProjectApi\obj\Debug\netcoreapp3.1\MyProjectApi.csproj.CoreCompileInputs.cache
+C:\Users\Андрей\source\repos\MyProjectApi\MyProjectApi\obj\Debug\netcoreapp3.1\MyProjectApi.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Андрей\source\repos\MyProjectApi\MyProjectApi\obj\Debug\netcoreapp3.1\MyProjectApi.MvcApplicationPartsAssemblyInfo.cache

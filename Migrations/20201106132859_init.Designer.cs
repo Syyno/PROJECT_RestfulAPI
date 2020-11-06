@@ -10,7 +10,7 @@ using MyProjectApi.Entities;
 namespace MyProjectApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20201009165306_init")]
+    [Migration("20201106132859_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -13,10 +13,7 @@ namespace MyProjectApi.Entities
         public DbSet<Product> Product { get; set; }
         public DbSet<Brand> Brand { get; set; }
 
-        public AppDbContext()
-        {
-            Database.EnsureDeleted();
-            Database.EnsureCreated();
-        }
+        public AppDbContext() { }
+
     }
 }

@@ -24,7 +24,8 @@ namespace MyProjectApi
                 try
                 {
                     var database = services.GetRequiredService<AppDbContext>();
-                    database.AddSomeData();
+                    if (!database.Brand.Any())
+                            database.AddSomeData();
                 }
                 catch (Exception ex)
                 {
